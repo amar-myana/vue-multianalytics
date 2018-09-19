@@ -40,12 +40,12 @@ for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElemen
    * params object should contain
    * @param viewName
    */
-  trackView ({viewName}) {
+  trackView ({viewName, properties = {}}) {
     if (!mixpanel.track) return
     if (this.config.debug) {
       logDebug(viewName)
     }
-    mixpanel.track("Page Viewed", { "page": viewName })
+    mixpanel.track(viewName, properties)
   }
 
   /**
